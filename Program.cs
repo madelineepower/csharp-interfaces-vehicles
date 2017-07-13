@@ -221,18 +221,39 @@ public class Program
 
         foreach (IAirBased thing in thingsThatFly)
         {
-            // Console.WriteLine(thing.Fly);
+            thing.Fly();
         }
 
         // Build a collection of all vehicles that operate on roads
 
         // With a single `foreach`, have each road vehicle Drive()
+        Motorcycle motorcycle1 = new Motorcycle();
+        PickupTruck truck1 = new PickupTruck();
 
+        List<IVehicle> thingsOnRoad = new List<IVehicle>();
+        thingsOnRoad.Add(motorcycle1);
+        thingsOnRoad.Add(truck1);
+
+        foreach (IVehicle thing in thingsOnRoad)
+        {
+            thing.Drive();
+        }
 
 
         // Build a collection of all vehicles that operate on water
         
         // With a single `foreach`, have each water vehicle Drive()
+        JetSki jet1 = new JetSki();
+        Pontoon pon1 = new Pontoon();
+
+        List<IVehicle> thingsOnWater = new List<IVehicle>();
+        thingsOnWater.Add(jet1);
+        thingsOnWater.Add(pon1);
+
+        foreach (IVehicle thing in thingsOnWater)
+        {
+            thing.Drive();
+        }
     }
 
 }
